@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Returning to Ravia</title>
+    <title>Ravia - Seller Setup</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-color: #ffffff;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            color: white;
+            color: #000000;
         }
         .container {
             text-align: center;
@@ -26,66 +26,67 @@
             margin-bottom: 20px;
         }
         .title {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: bold;
             margin-bottom: 16px;
+            color: #000000;
         }
         .message {
-            font-size: 16px;
+            font-size: 17px;
             line-height: 1.5;
+            margin-bottom: 20px;
+            color: #666666;
+        }
+        .instruction {
+            font-size: 15px;
+            line-height: 1.4;
             margin-bottom: 30px;
-            opacity: 0.9;
+            color: #666666;
+            background-color: #f2f2f7;
+            padding: 16px;
+            border-radius: 12px;
         }
-        .spinner {
-            border: 3px solid rgba(255,255,255,0.3);
-            border-top: 3px solid white;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 20px;
+        .swipe-instruction {
+            font-size: 15px;
+            line-height: 1.4;
+            margin-bottom: 20px;
+            color: #666666;
         }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        .maroon-accent {
+            color: #730d0d;
+            font-weight: 600;
         }
-        .button {
-            background: rgba(255,255,255,0.2);
-            border: 2px solid rgba(255,255,255,0.3);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        .button:hover {
-            background: rgba(255,255,255,0.3);
-            border-color: rgba(255,255,255,0.5);
+        .swipe-icon {
+            font-size: 24px;
+            margin: 0 8px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="logo">🛍️</div>
-        <div class="title">Returning to Ravia</div>
+        <div class="title">Seller Setup</div>
+        
         <div class="message">
-            Your seller setup is complete! Redirecting you back to the app...
+            <strong>If you haven't completed the setup:</strong><br>
+            Please finish filling out all the required information in the Stripe forms above.
         </div>
-        <div class="spinner"></div>
-        <a href="ravia://seller-onboarding-complete" class="button">
-            Open Ravia App
-        </a>
+        
+        <div class="instruction">
+            <strong>If you've completed the setup:</strong><br>
+            <span class="swipe-icon">⬇️</span> Swipe down from the top of your screen to return to the Ravia app.
+        </div>
+        
+        <div class="swipe-instruction">
+            <span class="maroon-accent">Tip:</span> You can also use the back button in your browser or close this tab to return to Ravia.
+        </div>
     </div>
 
     <script>
-        // Auto-redirect after 2 seconds
+        // Try to redirect to the app after a short delay
         setTimeout(function() {
             window.location.href = 'ravia://seller-onboarding-complete';
-        }, 2000);
-
-        // Also try to redirect immediately
-        window.location.href = 'ravia://seller-onboarding-complete';
+        }, 1000);
     </script>
 </body>
 </html> 
